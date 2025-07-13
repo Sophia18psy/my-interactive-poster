@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI x 教學實務 x 軍事應用 互動介紹</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 90%;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #007bff; /* Primary blue */
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .section-card {
+            background-color: #e9f5ff; /* Light blue background */
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #cce7ff;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+        .highlight {
+            background-color: #ffeeba; /* Yellow highlight */
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .icon {
+            display: inline-block;
+            margin-right: 0.5rem;
+            color: #007bff;
+        }
+        .speaker-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .speaker-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #007bff;
+        }
+        .course-description {
+            background-color: #f0f8f8; /* Light teal */
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #d1e7e7;
+            margin-top: 1.5rem;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+            margin-top: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+        .button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .footer-info {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .collapsible-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-left: 1.5rem;
+        }
+        .collapsible-content.expanded {
+            max-height: 500px; /* Adjust as needed */
+        }
+        .arrow {
+            transition: transform 0.3s ease-out;
+        }
+        .arrow.rotated {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>114 年度教育部教學實踐研究計畫南區區域基地</h1>
+        <h2 class="text-center">跨校教師社群</h2>
+        <h2 class="text-center text-xl mt-4"><span class="highlight">AI</span> x <span class="highlight">教學實務</span> x <span class="highlight">軍事應用</span></h2>
+
+        <div class="section-card">
+            <div class="collapsible-header" onclick="toggleCollapsible('theme')">
+                <h3 class="flex items-center"><span class="icon">&#128227;</span> 主題</h3>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <div id="theme-content" class="collapsible-content">
+                <p>運用 AI 數位教學經驗分享</p>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="collapsible-header" onclick="toggleCollapsible('time-location')">
+                <h3 class="flex items-center"><span class="icon">&#128197;</span> 時間與地點</h3>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <div id="time-location-content" class="collapsible-content">
+                <p><span class="icon">&#128197;</span> 時間: 114 年 7 月 15 日 (二) 09:00-12:00</p>
+                <p><span class="icon">&#128205;</span> 地點: Google Meet 線上講座</p>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="collapsible-header" onclick="toggleCollapsible('speaker')">
+                <h3 class="flex items-center"><span class="icon">&#128100;</span> 講師資訊</h3>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <div id="speaker-content" class="collapsible-content">
+                <div class="speaker-info">
+                    <img src="https://placehold.co/80x80/007bff/ffffff?text=講師" alt="講師照片" class="speaker-image">
+                    <div>
+                        <p>熊師瑋 中校助理教授</p>
+                        <p>國防大學政戰學院 心理及社會工作學系</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="collapsible-header" onclick="toggleCollapsible('projects')">
+                <h3 class="flex items-center"><span class="icon">&#128220;</span> 講師經歷計畫</h3>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <div id="projects-content" class="collapsible-content">
+                <ul>
+                    <li>- 112 年度教育部教學實踐研究學門績優計畫</li>
+                    <li>- 112、113 年連續獲教育部教學實踐研究計畫補助</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="course-description">
+            <div class="collapsible-header" onclick="toggleCollapsible('course-intro')">
+                <h2 class="flex items-center"><span class="icon">&#128218;</span> 課程介紹</h2>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <div id="course-intro-content" class="collapsible-content expanded">
+                <p>面對 AI 快速崛起與數位轉型浪潮，教師如何有效導入 AI 工具成為推動教學創新的重要課題。本課程邀請曾連續獲教育部教學實踐研究計畫肯定的熊師瑋中校助理教授，分享其於軍事教育現場運用 AI 輔助教學的實戰經驗，內容涵蓋 AI 在課程設計、學生互動、學習歷程追蹤等面向之應用實例，並帶領學員探索 AI 技術與教學實踐的整合策略。透過案例解析與操作演練，啟發軍校教師數位教學的創新思維與實踐行動。</p>
+                <div class="flex justify-center mt-6">
+                    <a href="https://meet.google.com/" target="_blank" class="button">加入 Google Meet 講座</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-info">
+            <p><span class="icon">&#128279;</span> 指導單位: 教育部教學實踐研究計畫南區區域基地-國立中山大學</p>
+            <p><span class="icon">&#127891;</span> 承辦單位: 海軍軍官學校 軍事性別平等與心理研究室</p>
+            <p>歡迎本校與區域基地教師踴躍參與，攜手推動教學創新與實踐成果轉化！</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for collapsible sections
+        function toggleCollapsible(id) {
+            const content = document.getElementById(id + '-content');
+            const arrow = content.previousElementSibling.querySelector('.arrow');
+
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                arrow.classList.remove('rotated');
+            } else {
+                content.classList.add('expanded');
+                arrow.classList.add('rotated');
+            }
+        }
+
+        // Initialize all collapsible sections to be collapsed except for the course introduction
+        document.addEventListener('DOMContentLoaded', () => {
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            collapsibleHeaders.forEach(header => {
+                const contentId = header.onclick.toString().match(/'([^']+)'/)[1];
+                const content = document.getElementById(contentId + '-content');
+                if (contentId !== 'course-intro') { // Keep course-intro expanded by default
+                    content.classList.remove('expanded');
+                    header.querySelector('.arrow').classList.remove('rotated');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
